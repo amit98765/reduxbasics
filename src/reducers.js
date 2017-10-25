@@ -1,4 +1,5 @@
 import { FILTER_CHANGED, MOVIES_LOADED, FAVORITED, UNFAVORITED } from './actions';
+import { combineReducers } from 'redux';
 
 export function movies(state = [], action) {
     switch (action.type) {
@@ -37,3 +38,4 @@ export function favorites(state = [], action) {
             return state;
     }
 }
+export default combineReducers({ movies, filter, favorites, loading });
